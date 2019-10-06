@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+	<style>
+
+		section{height:800px; position: relative;}
+		img{position: absolute;}
+		.blue{background:blue;}
+		.green{background:green;}
+		
+		@keyframes ro{ to{transform: rotate(360deg);} }
+		@keyframes ltor{ from{left:100px;} to{left:300px;} }
+		@keyframes rtol{ from{right:200px;} to{right:500px;} }	
+		
+		#img1{top:100px;}
+		#img2{top:200px;}
+		#img3{top:200px; }
+		#img4{top:400px; left: 800px;}
+		#img5{top:250px;}	
+		#monitor{ position: fixed; 
+				font-size: 0pt;
+				padding:5px; 
+				top:0; right:0; 
+				width:70px; height:20px;
+				color:white;}
+		#a{background: url(12.jpeg); background-size: cover;
+			background-attachment: fixed;}
+		#b{background: url(s3.jpg); background-size: cover;
+			background-attachment: fixed;}
+		#c{background: url(s4.jpg); background-size: cover;
+			background-attachment: fixed;}
+		#d{background: url(s2.jpg); background-size: cover;
+			background-attachment: fixed;}
+		
+		.text{font-family: 'Stylish', sans-serif; width:720px; color:black; position: absolute; 
+				top:200px; font-size: 1.5em; line-height: 1.5;
+				 left:450px; opacity: 0;  }
+		@keyframes bt{
+			from{top:200px; opacity: 0;}
+			to{top:100px; opacity: 1;}
+
+		#sang1{color: black;}
+
+
+		}
+	</style>
+</head>
+<body>
+	
+
+	<section class="blue" id="a" style="height: 650px;">
+
+
+		<img src="start.png" id="q" style="width: 100px;">
+	
+	<audio src="sang.mp3" id="sang1" ></audio>
+
+		
+
+		<img src="6.gif" style="width:200px;" id="img1">
+		
+	</section>
+	<section class="green" id="b">
+		<img src="2.gif" style="width:200px" id="img2">
+		<div id="t3" class="text">
+			아기 상어 뚜 루루 뚜루 귀여운 뚜 루루 뚜루 바닷속 뚜 루루 뚜루 아기 상어!<br>
+			엄마 상어 뚜 루루 뚜루 어여쁜 뚜 루루 뚜루 바닷속 뚜 루루 뚜루 엄마 상어!<br>
+			아빠 상어 뚜 루루 뚜루 힘이 센 뚜 루루 뚜루 바닷속 뚜 루루 뚜루 아빠 상어!<br>
+			할머니 상어 뚜 루루 뚜루 자상한 뚜 루루 뚜루 바닷속 뚜 루루 뚜루 할머니 상어!<br>
+			할아버지 상어 뚜 루루 뚜루 멋있는 뚜 루루 뚜루 바닷속 뚜 루루 뚜루 할아버지 상어!<br>
+			우리는 뚜 루루 뚜루 바다의 뚜 루루 뚜루 사냥꾼 뚜 루루 뚜루 상어 가족!
+
+			
+		</div>
+	</section>
+	<section class="blue" id="c">
+		<img src="3.gif" style="width:200px" id="img3">
+		<div id="t1" class="text">
+			상어다 뚜 루루 뚜루<br> 도망쳐 뚜 루루 뚜루 <br>도망쳐 뚜 루루 뚜루 <br>숨자! 으악!
+		</div>
+	</section>
+	<section class="green" id="d">
+		<img src="7.gif" style="width:200px" id="img4">
+		<div id="t2" class="text">
+			살았다 뚜 루루 뚜루 살았다 뚜 루루 뚜루<br> 오늘도 뚜 루루 뚜루 살았다 휴!<br>
+			신난다 뚜 루루 뚜루 신난다 뚜 루루 뚜루 <br>춤을 춰 뚜 루루 뚜루 노래 끝! 오예!
+		</div>
+		
+	</section>
+	
+	<img src="8.gif" style="margin-left: 300px; margin-top:200px;width: 400px" id="img6">
+
+	<div id="monitor"></div>
+
+	<p style="font-size: 9pt; margin-top: 600px; margin-left: 350px;">아기상어 저작권은 원작자에게 있습니다. ⓒ2019 HKNU.YOHAN LIM</p>
+	<script type="text/javascript">
+
+		window.onscroll = function(){
+			var t = document.documentElement.scrollTop + document.body.scrollTop;
+			monitor.innerHTML = t.toFixed(1);
+			
+			if(t > 50){ t3.style.animation = "bt 2s forwards";}
+			else{ t1.style.animation = "";}
+			if(120 < t){ img1.style.animation = "rtol 2s infinite"; }
+			else{img1.style.animation = ""; }
+
+			if(466 < t){ img2.style.animation = "ltor 2s forwards"; }
+			else{img2.style.animation = "";}
+
+			if(t > 1000){ img3.style.animation = "ltor 2s infinite"; }
+			if(t > 1100){ t1.style.animation = "bt 2s forwards";}
+			else{ t1.style.animation = "";}
+
+			if(t > 1550){ t2.style.animation = "bt 2s forwards";}
+			else{ t2.style.animation = "";}
+
+			if(t > 1466){ img4.style.animation = "ro 2s infinite"; }
+			if(t > 1900){ img5.style.animation = "rtol 2s infinite"; }
+
+		}
+
+		var qstate = "off";
+
+		q.onclick = function(){
+			if(qstate == "off"){
+			
+			sang1.play();
+			qstate = "on";
+		}else{
+			
+			sang1.pause();
+			qstate = "off"}
+		}
+
+		
+	</script>
+</body>
+</html>
